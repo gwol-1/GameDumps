@@ -18,13 +18,14 @@ This repository contains game dumps, extracted assets, and analysis for various 
 
 - `tools/` - Shared tools and utilities organized by game engine
 - `games/` - Individual game dumps and analysis
+- `cheat-engine/` - Cheat Engine resources and multi-game setup
 - `.claude/` - Claude AI context and project documentation
 
 ## Games Index
 
 | Game | Engine | Version | Status | Path |
 |------|--------|---------|--------|------|
-| Dragon Quest III HD-2D Remake | Unreal Engine 4 | - | Initial Setup | `games/dragon-quest-3-hd2d/` |
+| Dragon Quest III HD-2D Remake | Unreal Engine 4 | 1.2.1 | ✅ Complete Extraction | `games/dragon-quest-3-hd2d/` |
 
 ## Tools by Engine
 
@@ -41,6 +42,39 @@ This repository contains game dumps, extracted assets, and analysis for various 
 ### Unity
 - Location: `tools/unity/`
 - Games using this engine: (none yet)
+
+## Cheat Engine Integration
+
+This project supports **multi-game Cheat Engine workflows** for memory editing and game modification.
+
+### Quick Start with CE
+
+1. **Download Cheat Engine 7.6:** [Official Site](https://www.cheatengine.org/downloads.php)
+2. **Install:** Extract to `tools/cheat-engine/`
+3. **Read the Guide:** See [`cheat-engine/README.md`](cheat-engine/README.md) for complete setup
+
+### Resources
+
+- **Multi-Game CE Guide:** [`cheat-engine/README.md`](cheat-engine/README.md)
+- **Latest Version:** Cheat Engine 7.6 (Feb 2025)
+- **Table Database:** [FearlessRevolution](https://fearlessrevolution.com) (14,909+ tables)
+- **Tutorials:** [CE Forums](https://forum.cheatengine.org/viewforum.php?f=7)
+
+### Structure
+
+```
+cheat-engine/
+├── shared-tables/     # Reusable CE table templates
+├── tutorials/         # Learning resources
+└── scripts/           # Lua scripts for automation
+
+games/[game-name]/analysis/asset-catalogs/cheat-engine/
+├── [game]_data.json  # Extracted game data
+├── [game]-tables/    # Game-specific CE tables
+└── README.md         # Game-specific CE guide
+```
+
+**See Dragon Quest III example:** `games/dragon-quest-3-hd2d/analysis/asset-catalogs/cheat-engine/`
 
 ## Adding New Games
 
