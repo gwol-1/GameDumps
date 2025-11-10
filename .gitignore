@@ -1,0 +1,156 @@
+# GameDumps .gitignore
+
+# ===========================================
+# AES Keys and Sensitive Data
+# ===========================================
+# DO NOT commit encryption keys to public repos
+**/aes-key.txt
+**/aes_key.txt
+**/*-aes-key.txt
+**/keys.txt
+**/encryption-keys.txt
+
+# ===========================================
+# Large Extracted Game Assets
+# ===========================================
+# Extracted assets are typically too large for git
+# and may be copyrighted material
+
+# Raw extracted files from PAK/archive files
+**/extracted/**
+!**/extracted/.gitkeep
+
+# Processed assets
+**/assets/**/*.png
+**/assets/**/*.jpg
+**/assets/**/*.jpeg
+**/assets/**/*.tga
+**/assets/**/*.dds
+**/assets/**/*.fbx
+**/assets/**/*.obj
+**/assets/**/*.psk
+**/assets/**/*.psa
+**/assets/**/*.wav
+**/assets/**/*.ogg
+**/assets/**/*.mp3
+!**/assets/.gitkeep
+
+# Allow small documentation images
+!**/assets/**/README*.png
+!**/assets/**/doc*.png
+!**/assets/**/example*.png
+
+# ===========================================
+# Tools and Executables
+# ===========================================
+# Don't commit third-party tools, users should download them
+
+**/FModel/**
+**/Steamless/**
+**/AES-Key-Finder/**
+**/UEViewer/**
+**/umodel/**
+**/QuickBMS/**
+
+# Unreal Engine unpacked executables
+*.unpacked.exe
+*.unpacked
+
+# ===========================================
+# Game Files
+# ===========================================
+# Never commit copyrighted game files
+
+*.pak
+*.ucas
+*.utoc
+*.uasset
+*.uexp
+*.ubulk
+*.umap
+
+# ===========================================
+# Windows
+# ===========================================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ===========================================
+# macOS
+# ===========================================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ===========================================
+# Temporary Files
+# ===========================================
+*.tmp
+*.temp
+*.log
+*.cache
+
+# ===========================================
+# IDE and Editor Files
+# ===========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# ===========================================
+# Python (if using Python scripts)
+# ===========================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+venv/
+env/
+
+# ===========================================
+# Node.js (if using Node scripts)
+# ===========================================
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ===========================================
+# Output Directories
+# ===========================================
+# FModel output directories
+**/Output/**
+**/Exports/**
+**/Dumps/**
+
+# ===========================================
+# Allow Important Files
+# ===========================================
+# Keep directory structure with .gitkeep files
+!.gitkeep
+
+# Keep documentation
+!**/*.md
+!**/README
+
+# Keep scripts
+!**/scripts/**/*.py
+!**/scripts/**/*.js
+!**/scripts/**/*.sh
+!**/scripts/**/*.bat
+!**/scripts/**/*.ps1
+
+# Keep analysis documentation
+!**/analysis/**/*.txt
+!**/analysis/**/*.md
+!**/analysis/**/*.json
+!**/analysis/**/*.csv

@@ -45,16 +45,52 @@ Documentation and findings:
 - Technical notes
 - Screenshots/references
 
+## Getting Started
+
+### Prerequisites
+
+1. **Extract AES Decryption Key** (Required)
+   - Follow the guide: [`AES-KEY-EXTRACTION.md`](AES-KEY-EXTRACTION.md)
+   - Uses Steamless + AES Key Finder method
+   - Save key to `scripts/aes-key.txt` (not committed to git)
+
+2. **Install FModel**
+   - Download from: https://github.com/4sval/FModel/releases/latest
+   - Extract to: `../../tools/unreal-engine-4/FModel/`
+   - Follow setup guide: `../../tools/unreal-engine-4/EXTRACTION-GUIDE.md`
+
+3. **Begin Extraction**
+   - Configure FModel with game directory
+   - Add AES key to FModel settings
+   - Browse and extract assets
+
 ## Extraction Notes
 
 ### Tools Used
-- (List tools here, e.g., UE4 unpacker, FModel, etc.)
+- **FModel** - Primary asset extraction tool
+- **Steamless** - Remove Steam DRM from executable
+- **AES Key Finder** - Extract encryption key from unpacked executable
 
 ### Game File Location
-- (Add game installation path here)
+**Steam Installation Path:**
+```
+<Steam>\steamapps\common\Dragon Quest III HD-2D Remake\
+```
+
+**Shipping Executable:**
+```
+Binaries\Win64\DQIIIHD2D-Win64-Shipping.exe
+```
+*(Note: Exact name may vary)*
+
+**PAK Files Location:**
+```
+Game\Content\Paks\
+```
 
 ### Pak File Structure
-- (Document pak files found)
+- **Encryption:** AES-256 encrypted (requires key extraction)
+- **Files:** (To be documented after extraction)
 
 ## Findings
 

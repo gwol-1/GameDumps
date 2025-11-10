@@ -19,21 +19,24 @@ This document provides full context for the GameDumps project to assist Claude i
 ```
 GameDumps/
 ├── README.md                    # Main index with games table
+├── .gitignore                   # Protects AES keys and large assets
 ├── .claude/
 │   └── claude.md                # This file - project context
 ├── tools/                       # Shared extraction tools by engine
 │   ├── unreal-engine-4/
-│   │   ├── FModel/              # Primary UE4 extraction tool
+│   │   ├── FModel/              # Primary UE4 extraction tool (not committed)
 │   │   └── EXTRACTION-GUIDE.md  # Comprehensive UE4 extraction guide
 │   ├── unreal-engine-5/
 │   └── unity/
 └── games/                       # Individual game dumps
     └── dragon-quest-3-hd2d/
-        ├── README.md            # Game-specific info and notes
-        ├── extracted/           # Raw extracted files
-        ├── assets/              # Processed assets (textures, models, audio)
-        ├── scripts/             # Extraction/processing scripts
-        └── analysis/            # Documentation and findings
+        ├── README.md                  # Game-specific info and notes
+        ├── AES-KEY-EXTRACTION.md      # How to extract AES key
+        ├── extracted/                 # Raw extracted files (gitignored)
+        ├── assets/                    # Processed assets (gitignored)
+        ├── scripts/                   # Extraction/processing scripts
+        │   └── aes-key.txt           # Store AES key here (gitignored)
+        └── analysis/                  # Documentation and findings
 ```
 
 ---
@@ -52,8 +55,10 @@ GameDumps/
 **Next Steps:**
 1. Download FModel (v4.4.4.0) from https://github.com/4sval/FModel/releases/latest
 2. Install to `tools/unreal-engine-4/FModel/`
-3. Locate game installation directory
-4. Find AES decryption key (check modding communities)
+3. Extract AES decryption key using Steamless + AES Key Finder method
+   - Follow: `games/dragon-quest-3-hd2d/AES-KEY-EXTRACTION.md`
+   - Save key to: `games/dragon-quest-3-hd2d/scripts/aes-key.txt`
+4. Configure FModel with game directory and AES key
 5. Extract assets using FModel
 6. Organize extracted assets in game folder structure
 
@@ -168,7 +173,21 @@ GameDumps/
 - Discord: Modding community servers
 - GitHub: Search for "[game name] AES key"
 
-**Extraction Tools:**
+**Extraction Method (Recommended):**
+For Dragon Quest III HD-2D Remake, use the Steamless + AES Key Finder method:
+1. **Steamless** - Remove Steam DRM from game executable
+   - Download: https://github.com/atom0s/Steamless/releases/tag/v3.1.0.0
+2. **AES Key Finder** - Extract key from unpacked executable
+   - Download: https://github.com/Cracko298/AES-Key-Extracting-Guide/files/9074659/AES.Key.Finder.zip
+3. **Detailed Guide:** `games/dragon-quest-3-hd2d/AES-KEY-EXTRACTION.md`
+
+**Process Summary:**
+1. Use Steamless to remove DRM from Shipping.exe
+2. Run AES Key Finder on unpacked .exe
+3. Folder name created = 64-char AES key
+4. Add key to FModel settings
+
+**Alternative Tools:**
 - Cheat Engine (memory scanning)
 - x64dbg (debugging)
 - Custom AES key finder scripts
@@ -386,7 +405,8 @@ When assisting with this project, Claude can:
 
 ### Key Paths
 - **Project Root:** `D:\Dev\GitHub\GameDumps`
-- **UE4 Guide:** `tools/unreal-engine-4/EXTRACTION-GUIDE.md`
+- **UE4 Extraction Guide:** `tools/unreal-engine-4/EXTRACTION-GUIDE.md`
+- **AES Key Extraction Guide:** `games/dragon-quest-3-hd2d/AES-KEY-EXTRACTION.md`
 - **FModel:** `tools/unreal-engine-4/FModel/`
 - **Current Game:** `games/dragon-quest-3-hd2d/`
 
@@ -411,8 +431,10 @@ mkdir -p games/[game-slug]/{extracted,assets,scripts,analysis}
 ### Next Immediate Steps
 1. Download FModel from https://github.com/4sval/FModel/releases/latest
 2. Extract to `tools/unreal-engine-4/FModel/`
-3. Find Dragon Quest III HD-2D Remake AES key
-4. Begin extraction following guide at `tools/unreal-engine-4/EXTRACTION-GUIDE.md`
+3. Download Steamless from https://github.com/atom0s/Steamless/releases/tag/v3.1.0.0
+4. Download AES Key Finder from https://github.com/Cracko298/AES-Key-Extracting-Guide/files/9074659/AES.Key.Finder.zip
+5. Extract AES key following `games/dragon-quest-3-hd2d/AES-KEY-EXTRACTION.md`
+6. Begin asset extraction following `tools/unreal-engine-4/EXTRACTION-GUIDE.md`
 
 ---
 
