@@ -192,20 +192,51 @@ Copy template from `games/dragon-quest-3-hd2d/analysis/asset-catalogs/cheat-engi
 
 ## 📚 Learning Resources
 
+### 🎓 Local Tutorials (Detailed Guides)
+
+**We've created comprehensive tutorials based on official CE resources:**
+
+1. **[Getting Started](tutorials/getting-started.md)** ⭐ Start here!
+   - CE basics and workflow
+   - Value types and scanning
+   - Pointers and freezing values
+   - Built-in tutorial guide
+   - Based on CE Wiki official tutorials
+
+2. **[Auto Assembler](tutorials/auto-assembler.md)**
+   - Code injection techniques
+   - Templates and examples
+   - Assembly language basics
+   - Practical game mod examples
+   - Three levels of injection
+
+3. **[Lua Scripting](tutorials/lua-scripting.md)**
+   - Automation and UI creation
+   - CE Lua API reference
+   - Hotkeys and forms
+   - Auto-attach scripts
+   - Advanced OOP techniques
+
+4. **[CE Extensions](CE-EXTENSIONS.md)**
+   - Community plugins
+   - Popular extensions
+   - How to install
+   - Creating your own
+
 ### For Beginners
 
 **Start Here:**
-1. **CE Official Tutorial** (Built into CE)
-   - Open CE > Help > Cheat Engine Tutorial
-   - Learn basics of memory scanning
-   - Step 1-9 covers fundamentals
+1. **Our Getting Started Guide** (See above)
+   - Complete beginner tutorial
+   - Everything from basics to advanced
 
-2. **Official Forums Basics**
+2. **CE Official Tutorial** (Built into CE)
+   - Open CE > Help > Cheat Engine Tutorial
+   - Interactive step-by-step (Steps 1-9)
+
+3. **Official Forums Basics**
    - https://forum.cheatengine.org/viewtopic.php?t=26540
    - Cheat Engine Basics Tutorial (Steps 1-7)
-
-3. **Our Local Tutorial**
-   - `cheat-engine/tutorials/getting-started.md` (to be created)
 
 ### Intermediate Topics
 
