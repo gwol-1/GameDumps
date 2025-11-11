@@ -154,8 +154,10 @@ cheat-engine/
 │   ├── health-template.CT        # Generic health finding
 │   ├── pointer-template.CT       # Pointer scan workflow
 │   └── currency-template.CT      # Money/gold template
-└── scripts/                       # Lua scripts
-    └── auto-attach.lua           # Auto-attach to game process
+└── scripts/                       # Automation scripts
+    ├── Start-CEWithGame.ps1      # PowerShell: Launch CE with any game
+    ├── New-CETable.ps1            # PowerShell: Generate CT files
+    └── auto-attach.lua           # Lua: Auto-attach to game process
 ```
 
 ---
@@ -222,6 +224,13 @@ Copy template from `games/dragon-quest-3-hd2d/analysis/asset-catalogs/cheat-engi
    - Popular extensions
    - How to install
    - Creating your own
+
+5. **[PowerShell Integration](POWERSHELL-INTEGRATION.md)** 🔧 NEW!
+   - Automate CE workflows
+   - LuaClient pipe API
+   - Generate CT files programmatically
+   - PowerShell scripts for CE
+   - Integration with game dumps
 
 ### For Beginners
 
